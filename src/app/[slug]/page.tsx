@@ -1,4 +1,4 @@
-import Post from "@/components/posts";
+import Post from "@/components/ui/post";
 import { getPostBySlug } from "@/lib/request";
 import {
   HydrationBoundary,
@@ -22,7 +22,7 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient();``
 
   await queryClient.prefetchQuery({
     queryKey: ["post", params.slug],
@@ -30,7 +30,7 @@ export default async function BlogPostPage({
   });
 
   return (
-    <div className="max-w-7xl w-full px-3 xl:p-0 mx-auto">
+    <div className="max-w-7xl w-full px-3 xl:p-0 mx- auto">
       <HydrationBoundary state={dehydrate(queryClient)}>
         <Post slug={params.slug} />
       </HydrationBoundary>

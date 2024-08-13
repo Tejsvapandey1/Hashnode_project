@@ -19,7 +19,7 @@ export default function BlogCard({ post }: { post: PostMetadata }) {
       </CardHeader>
       <CardTitle>
         <h2 className="text-xl text-bold font-bold">
-          <Link className="hover:underline text-lg" href={`/post/${post.slug}`}>
+          <Link className="hover:underline text-lg" href={`/${post.slug}`}>
             {post.title}
           </Link>
         </h2>
